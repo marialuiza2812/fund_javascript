@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros estudos com Dom</title>
+    <link rel="stylesheet" href="dom.css">
+   
+</head>
+<body>
+    <h1>Primeiros passos com o Dom</h1>
+    <p>Aprendendo a usar o <strong>Dom</strong> em JavaScript</p>
+   
+    
+        <!-- Exercício 1 - Estrutura de página simples -->
+        <section id="ex1" class="exercicio">
+        <h2>Exercício 1: Estrutura de página simples</h2>
+        <p>Essa é a estrutura básica de uma página HTML. Já está configurado com título, cabeçalho e rodapé simples.</p>
+    </section>
+
+    <!-- Exercício 2 - Caixa de texto e botão -->
+    <section id="ex2" class="exercicio">
+        <h2>Exercício 2: Caixa de texto e botão</h2>
+        <form action="#" method="post">
+            <label for="name">Digite seu nome:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+     <!-- Exercício 3 - Lista de navegação horizontal -->
+     <section id="ex3" class="exercicio">
+        <h2>Exercício 3: Lista de navegação horizontal</h2>
+        <nav>
+            <ul style="list-style-type: none; text-align: center;">
+                <li style="display: inline; margin: 0 15px;"><a href="#">Home</a></li>
+                <li style="display: inline; margin: 0 15px;"><a href="#">Sobre</a></li>
+                <li style="display: inline; margin: 0 15px;"><a href="#">Serviços</a></li>
+                <li style="display: inline; margin: 0 15px;"><a href="#">Contato</a></li> 
+                <!--<li style="display: inline; margin: 0 15px;"> n precisa de outras paginas html--> 
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Exercício 4 - Grid Layout -->
+    <section id="ex4" class="exercicio">
+        <h2>Exercício 4: Grid Layout</h2>
+        <div class="project-list">
+            <div class="project">
+                <h3>Projeto 1</h3>
+                <p>é uma interface de programação para os documentos HTML e XML. Representa uma página de forma que os programas podem alterar a estrutura do documento</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 2</h3>
+                <p>O DOM (Document Object Model) é uma representação de dados dos objetos que compõem a estruturab.</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 3</h3>
+                <p>alterar o estilo e o conteúdo. O DOM representa o documento para nós e objetos, dessa forma, como linguagens de programação podem se conectar à página.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercício 4 - Grid Layout -->
+    <section id="ex4" class="exercicio">
+        <h2>Exercício 4: Grid Layout</h2>
+        <div class="project-list">
+            <div class="project">
+                <h3>Projeto 1</h3>
+                <p>Uma página da Web é um documento. Este documento pode ser exibido na janela do navegador ou como uma fonte HTML.</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 2</h3>
+                <p>Todas as propriedades, métodos e eventos disponíveis para manipular e criar páginas da Web são organizados em objetos</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 3</h3>
+                <p> DOM foi projetado para ser independente de qualquer linguagem de programação específica,</p>
+            </div>
+        </div>
+    </section>
+
+      <h1>Calculadora Simples</h1>
+    
+      <div>
+        <input type="number" id="numero1" placeholder="Digite o 1º número">
+        <input type="number" id="numero2" placeholder="Digite o 2º número">
+      </div>
+    
+      <div>
+        <button onclick="calcular('+')">Somar (+)</button>
+        <button onclick="calcular('-')">Subtrair (-)</button>
+        <button onclick="calcular('*')">Multiplicar (*)</button>
+        <button onclick="calcular('/')">Dividir (/)</button>
+      </div>
+    
+      <div class="result" id="resultado"></div>
+    
+      <script>
+        function calcular(operacao) {
+          // Obter os valores dos campos de entrada
+          const num1 = parseFloat(document.getElementById('numero1').value);
+          const num2 = parseFloat(document.getElementById('numero2').value);
+    
+          // Variável para armazenar o resultado
+          let resultado;
+    
+          // Verificar se os números são válidos
+          if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById('resultado').textContent = "Por favor, insira dois números válidos.";
+            return;
+          }
+    
+          // Realizar a operação baseada no botão clicado
+          if (operacao === '+') {
+            resultado = num1 + num2;
+          } else if (operacao === '-') {
+            resultado = num1 - num2;
+          } else if (operacao === '*') {
+            resultado = num1 * num2;
+          } else if (operacao === '/') {
+            if (num2 === 0) {
+              document.getElementById('resultado').textContent = "Erro: divisão por zero!";
+              return;
+            }
+            resultado = num1 / num2;
+          } else {
+            document.getElementById('resultado').textContent = "Operação inválida.";
+            return;
+          }
+    
+          // Exibir o resultado
+          document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+        }
+      </script>
+    </body>
+    </html>
+    
